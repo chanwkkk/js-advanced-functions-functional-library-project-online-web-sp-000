@@ -76,6 +76,7 @@ const fi = (function() {
       return newArr
     },
 
+<<<<<<< HEAD
     uniqSorted: function(collection, iteratee) {
       const sorted = [collection[0]]
       for (let idx = 1; idx < collection.length; idx++) {
@@ -103,6 +104,23 @@ const fi = (function() {
         return Array.from(uniqVals)
       }
     },
+=======
+     uniq: function(array, [isSorted], [callback]){
+       let newArr = []
+       if ([callback]){
+         let changedArr = array.map(callback)
+          newArr =  fi.uniq(changedArr)
+       }else{
+         newArr.push(array[0])
+          for (let i=0; i<array.length;i++){
+            if (array[i]!===array[i+1]){
+              newArr.push(array[i+1])
+            }
+          }
+       }
+       return newArr.sort()
+     },
+>>>>>>> 623656abd3c3f48055b3b7b784306fe9b07977bf
 
      keys: function(object){
        return Object.keys(object)
