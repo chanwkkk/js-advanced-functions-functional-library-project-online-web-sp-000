@@ -18,11 +18,7 @@ const fi = (function() {
     },
 
     map: function(collection,callback) {
-      if (Array.isArray(collection)){
-        return collection.map(callback)
-      }else{
-        return Object.values(collection).map(callback)
-      }
+      return Array.isArray(collection)? collection.map(callback) : Object.values(collection).map(callback)
     },
 
     reduce: function(collection,callback,acc) {
